@@ -9,6 +9,7 @@ class Pegawai_model extends CI_Model
 			$this->db->or_like('nip', $cari);
 			$this->db->or_like('jk', $cari);
 		}
+		$this->db->order_by('id', 'DESC');
 		return  $this->db->get('tb_pegawai', $limit, $start)->result_array();
 	}
 	public function tambahDataPegawai()

@@ -15,9 +15,10 @@ class Pegawai extends CI_Controller
 		// paginatioon
 		if ($this->input->post('cari')) {
 			$data['cari'] = $this->input->post('cari');
-			$this->session->set_userdata('cari', $data['cari']);
+			// $this->session->set_userdata('cari', $data['cari']);
 		} else {
-			$data['cari']  = $this->session->userdata('cari');
+			$data['cari'] = null;
+			// $data['cari']  = $this->session->userdata('cari');
 		}
 
 		$this->db->like('nama', $data['cari']);
